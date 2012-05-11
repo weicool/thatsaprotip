@@ -1,0 +1,28 @@
+DEFAULTS: &DEFAULTS
+  adapter: mysql2
+  pool: 5
+  encoding: utf8
+  collation: utf8_general_ci
+  socket: /tmp/mysql.sock
+
+development:
+  <<: *DEFAULTS
+  database: thatsaprotip
+  username: root
+  password:
+
+production:
+  <<: *DEFAULTS
+  database: thatsaprotip
+  username: weicool
+  password: soulcalibear1988
+  socket: /var/run/mysqld/mysqld.sock
+  
+test: &test
+  <<: *DEFAULTS
+  database: thatsaprotip_test
+  username: root
+  password:
+
+cucumber:
+  <<: *test
