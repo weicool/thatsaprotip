@@ -12,6 +12,13 @@
 
 ActiveRecord::Schema.define(:version => 20120514161733) do
 
+  create_table "favorites", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "protip_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "protip_favorites_total_counts", :force => true do |t|
     t.integer  "protip_id"
     t.integer  "count"
@@ -26,15 +33,13 @@ ActiveRecord::Schema.define(:version => 20120514161733) do
     t.datetime "updated_at", :null => false
   end
 
-  create_table "tags", :force => true do |t|
-    t.string "tag", :limit => 20
+  create_table "protips_tags", :id => false, :force => true do |t|
+    t.integer "protip_id"
+    t.integer "tag_id"
   end
 
-  create_table "user_favorites", :force => true do |t|
-    t.integer  "user_id"
-    t.integer  "protip_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+  create_table "tags", :force => true do |t|
+    t.string "tag", :limit => 20
   end
 
   create_table "users", :force => true do |t|

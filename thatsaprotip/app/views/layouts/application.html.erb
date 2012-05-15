@@ -1,14 +1,22 @@
 <!DOCTYPE html>
-<html>
+<html lang=en>
 <head>
-  <title>Thatsaprotip</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>That's a Protip</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-<%= yield %>
+<div id="container">
+  <div id="header">
+    <h1>That's a Protip</h1>
+  </div>
+  <div id="content">
+    <%= yield %>
+  </div>
+</div>
 
 </body>
 </html>
