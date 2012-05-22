@@ -1,1 +1,12 @@
-Hello!
+%li.protip.clearfix
+  .content.lfloat
+    .text= protip.protip
+    = render_tags(protip)
+    .bottom
+      %span.author= protip.author.alias
+      &middot;
+      %span.date= l protip.created_at, :format => :long
+  .actions.rfloat
+    .favorites
+      .count= protip.favorites_count
+      .action ♥

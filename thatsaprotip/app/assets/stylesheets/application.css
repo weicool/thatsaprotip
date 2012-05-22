@@ -11,3 +11,179 @@
  *= require_self
  *= require_tree .
 */
+
+
+/* RESET http://meyerweb.com/eric/tools/css/reset/ v1.0 | 20080212 */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+body {
+  line-height: 1;
+}
+
+:focus {
+  outline: 0;
+}
+
+ins {
+  text-decoration: none;
+}
+del {
+  text-decoration: line-through;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* LAYOUT STRUCTURE */
+
+body {
+  background: #F6F6F6;
+  font: 12px "Lucida Grande", "Lucida Sans Unicode", verdana, sans-serif;
+  color: #333;
+  min-width: 960px;
+}
+
+a:link, a:visited, a:active {
+  color: #0AF;
+  text-decoration: none; 
+}
+
+a:hover, a:focus {
+  color: #75C5F5;
+  text-decoration: none;
+}
+
+.layoutContent {
+  margin: 0 auto;
+  width: 850px;
+}
+
+#header {
+  background: #75C5F5;
+  background-image: -webkit-linear-gradient(#AADBF9, #75C5F5);
+  background-image: -moz-linear-gradient(top, #AADBF9, #75C5F5);
+}
+
+#header .title {
+  color: #FEFEFE;
+  font: bold 20px Helvetica, Arial;
+  padding: 5px 0 3px;
+  text-shadow: 0 0 2px #888;
+}
+
+#content .layoutContent {
+  background: #FBFBFB;
+  border: 1px solid #EEE;
+  border-top: none;
+  padding: 5px;
+}
+
+/* Home */
+
+.protipsList {
+  width: 600px;
+}
+
+/* Protips */
+
+.protipsList {
+  list-style: none;
+  margin: 0 20px;
+}
+
+.protipsList .protip {
+  border-bottom: 1px solid #EEE;
+}
+
+.protipsList .protip:last-child {
+  border-bottom: none;
+}
+
+.protip {
+  padding: 15px 0;
+}
+
+.protip .text {
+  font: 18px Georgia, Arial;
+}
+
+.protip .favorites {
+  color: #CCC;
+  font: bold 20px Helvetica, Arial;
+}
+
+.protip:hover .favorites {
+  color: #333;
+}
+
+.protip .action {
+  font-size: 26px;
+  margin-left: 3px;
+}
+
+.protip:hover .action {
+  color: #D00;
+}
+
+.protip .tags {
+  margin: 3px 0 6px;
+}
+
+.protip .bottom {
+  color: #888;
+  font-size: 11px;
+}
+
+/* Tags */
+
+.tags {
+  list-style: none;
+}
+
+.tags .tag {
+  background: #AADBF9;
+  border-radius: 3px;
+  color: #FFF;
+  float: left;
+  font-size: 10px;
+  margin-right: 5px;
+  padding: 0 4px 1px;
+  text-shadow: 0 0 1px #888;
+}
+
+/* Sitewide */
+
+.lfloat {
+  float: left;
+}
+
+.rfloat {
+  float: right;
+}
+
+.clearfix:after {
+  clear: both;
+  content: ".";
+  display: block;
+  height: 0;
+  visibility: hidden;
+}

@@ -1,4 +1,4 @@
-class Protip < ActiveRecord::Base
+class ProtipFavoritesTotalCount < ActiveRecord::Base
 
   belongs_to :protip
 
