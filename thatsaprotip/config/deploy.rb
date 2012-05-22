@@ -1,5 +1,3 @@
-require "bundler/capistrano"
-
 set :application, 'thatsaprotip'
 
 default_run_options[:pty] = true  # Must be set for the password prompt from git to work
@@ -21,3 +19,4 @@ namespace :deploy do
     run "#{try_sudo} touch #{File.join(current_path,'tmp','restart.txt')}"
   end
 end
+# end
