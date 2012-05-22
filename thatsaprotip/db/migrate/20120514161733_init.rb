@@ -32,7 +32,7 @@ class Init < ActiveRecord::Migration
 
     create_table :protip_favorites_total_counts do |t|
       t.belongs_to :protip
-      t.integer :count
+      t.integer :count, :default => 0
       t.timestamps
     end
   end

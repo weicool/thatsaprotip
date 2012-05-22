@@ -21,9 +21,9 @@ ActiveRecord::Schema.define(:version => 20120514161733) do
 
   create_table "protip_favorites_total_counts", :force => true do |t|
     t.integer  "protip_id"
-    t.integer  "count"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.integer  "count",      :default => 0
+    t.datetime "created_at",                :null => false
+    t.datetime "updated_at",                :null => false
   end
 
   create_table "protips", :force => true do |t|

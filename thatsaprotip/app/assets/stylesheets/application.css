@@ -135,9 +135,12 @@ a:hover, a:focus {
   color: #333;
 }
 
+.protip .actions {
+  text-align: center;
+}
+
 .protip .action {
   font-size: 26px;
-  margin-left: 3px;
 }
 
 .protip:hover .action {
