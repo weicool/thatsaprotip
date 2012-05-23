@@ -1,3 +1,5 @@
+load 'deploy/assets'
+
 set :application, 'thatsaprotip'
 
 default_run_options[:pty] = true  # Must be set for the password prompt from git to work
