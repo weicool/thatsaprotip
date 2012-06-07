@@ -16,4 +16,7 @@ class Protip < ActiveRecord::Base
     (protip_favorites_total_count && protip_favorites_total_count.count) || 0
   end
 
+  def favorited_by_viewer
+    favorited_users.include?(User.viewer)
+  end
 end

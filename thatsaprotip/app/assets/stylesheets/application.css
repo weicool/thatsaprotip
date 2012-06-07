@@ -126,13 +126,22 @@ a:hover, a:focus {
   font: 18px Georgia, Arial;
 }
 
-.protip .favorites {
+.protip .favorite {
   color: #CCC;
   font: bold 20px Helvetica, Arial;
 }
 
-.protip:hover .favorites {
+.protip:hover .favorite {
   color: #333;
+  cursor: pointer;
+}
+
+.protip .favorite.favorited .count {
+  color: #333;
+}
+
+.protip .favorite.favorited .action {
+  color: #D00;
 }
 
 .protip .actions {
@@ -141,10 +150,6 @@ a:hover, a:focus {
 
 .protip .action {
   font-size: 26px;
-}
-
-.protip:hover .action {
-  color: #D00;
 }
 
 .protip .tags {

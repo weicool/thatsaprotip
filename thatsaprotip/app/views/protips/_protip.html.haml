@@ -7,6 +7,6 @@
       &middot;
       %span.date= l protip.created_at, :format => :long
   .actions.rfloat
-    .favorites
+    .favorite{ :class => protip.favorited_by_viewer ? 'favorited' : '' }
       .count= protip.favorites_count
       .action ♥

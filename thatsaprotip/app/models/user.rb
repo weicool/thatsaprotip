@@ -7,4 +7,8 @@ class User < ActiveRecord::Base
     :through => :favorites,
     :source => :protip
 
+  def self.viewer
+    return User.first
+  end
+
 end
