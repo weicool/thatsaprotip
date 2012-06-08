@@ -5,4 +5,9 @@ class ProtipsController < ApplicationController
   def index
     @protips = Protip.all
   end
+
+  def favorite
+    protip = Protip.find(params[:id])
+    render :json => protip.viewer_favorited
+  end
 end

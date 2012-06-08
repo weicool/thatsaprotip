@@ -1,4 +1,4 @@
-%li.protip.clearfix
+%li.protip.clearfix{ :id => "protip_#{protip.id}" }
   .content.lfloat
     .text= protip.protip
     = render_tags(protip)
@@ -7,6 +7,6 @@
       &middot;
       %span.date= l protip.created_at, :format => :long
   .actions.rfloat
-    .favorite{ :class => protip.favorited_by_viewer ? 'favorited' : '' }
+    .favorite{ :class => protip.favorited_by_viewer? ? 'favorited' : '' }
       .count= protip.favorites_count
       .action ♥

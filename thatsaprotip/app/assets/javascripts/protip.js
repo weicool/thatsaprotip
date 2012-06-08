@@ -1,6 +1,7 @@
 (function($) {
-  function Favorite(root) {
+  function Favorite(root, id) {
     this._root = $(root);
+    this._id = id;
   }
 
   Favorite.prototype = {
@@ -10,6 +11,16 @@
       // optimistically update UI
       this._setFavoritedStatus(!favorited_status);
       this._setCount(new_count);
+
+      $.ajax({
+        url: '/protips/' + this._id + '/favorite',
+        type: 'POST',
+        dataType: 'json',
+        success: function(data) {
+          this._setFavoritedStatus(data.favorited);
+          this._setCount(data.count);
+        }.bind(this)
+      });
     },
 
     _getCount: function() {
@@ -34,13 +45,14 @@
 
   $.fn.Protip = function() {
     var root = this;
+    var id = parseInt(root.attr('id').match(/protip_(\d+)/)[1], 10);
     // lazily instantiate a favorite object
     var favorite;
 
     root.click(function(event) {
       var favorite_root = $(event.target).closest('.favorite');
-      if (favorite_root) {
-        favorite || (favorite = new Favorite(favorite_root));
+      if (favorite_root[0]) {
+        favorite || (favorite = new Favorite(favorite_root, id));
         favorite.click();
       }
     });
