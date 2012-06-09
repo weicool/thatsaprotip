@@ -6,12 +6,11 @@
 
   Like.prototype = {
     click: function() {
-      console.log('hello');
       var liked_status = this._getLikedStatus();
       var count = this._getCount();
       // optimistically update UI
       this._setLikedStatus(!liked_status);
-      this._setCount(liked_status + (liked_status ? -1 : 1));
+      this._setCount(count + (liked_status ? -1 : 1));
 
       $.ajax({
         url: '/protips/' + this._id + '/like',
