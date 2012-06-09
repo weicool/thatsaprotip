@@ -12,6 +12,14 @@ class Protip < ActiveRecord::Base
 
   has_and_belongs_to_many :tags
 
+  class << self
+    def best
+      Protip.
+        includes(:protip_likes_total_count).
+        order('protip_likes_total_counts.count DESC')
+    end
+  end
+
   def likes_count
     (protip_likes_total_count && protip_likes_total_count.count) || 0
   end
