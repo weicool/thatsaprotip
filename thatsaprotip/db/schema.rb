@@ -12,14 +12,14 @@
 
 ActiveRecord::Schema.define(:version => 20120514161733) do
 
-  create_table "favorites", :force => true do |t|
+  create_table "likes", :force => true do |t|
     t.integer  "user_id"
     t.integer  "protip_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
 
-  create_table "protip_favorites_total_counts", :force => true do |t|
+  create_table "protip_likes_total_counts", :force => true do |t|
     t.integer  "protip_id"
     t.integer  "count",      :default => 0
     t.datetime "created_at",                :null => false

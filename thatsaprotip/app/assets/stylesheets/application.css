@@ -126,21 +126,21 @@ a:hover, a:focus {
   font: 18px Georgia, Arial;
 }
 
-.protip .favorite {
+.protip .like {
   color: #CCC;
   font: bold 20px Helvetica, Arial;
 }
 
-.protip:hover .favorite {
+.protip:hover .like {
   color: #333;
   cursor: pointer;
 }
 
-.protip .favorite.favorited .count {
+.protip .like.liked .count {
   color: #333;
 }
 
-.protip .favorite.favorited .action {
+.protip .like.liked .action {
   color: #D00;
 }
 

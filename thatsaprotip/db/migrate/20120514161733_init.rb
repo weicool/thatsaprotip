@@ -24,13 +24,13 @@ class Init < ActiveRecord::Migration
       t.belongs_to :tag
     end
 
-    create_table :favorites do |t|
+    create_table :likes do |t|
       t.belongs_to :user
       t.belongs_to :protip
       t.timestamps
     end
 
-    create_table :protip_favorites_total_counts do |t|
+    create_table :protip_likes_total_counts do |t|
       t.belongs_to :protip
       t.integer :count, :default => 0
       t.timestamps
@@ -42,7 +42,7 @@ class Init < ActiveRecord::Migration
     drop_table :protips
     drop_table :tags
     drop_table :protips_tags
-    drop_table :favorites
-    drop_table :protip_favorites_total_counts
+    drop_table :likes
+    drop_table :protip_likes_total_counts
   end
 end

@@ -1,24 +1,31 @@
 (function($) {
-  function Favorite(root, id) {
+  function Like(root, id) {
     this._root = $(root);
     this._id = id;
   }
 
-  Favorite.prototype = {
+  Like.prototype = {
     click: function() {
-      var favorited_status = this._getFavoritedStatus();
-      var new_count = this._getCount() + (favorited_status ? -1 : 1);
+      console.log('hello');
+      var liked_status = this._getLikedStatus();
+      var count = this._getCount();
       // optimistically update UI
-      this._setFavoritedStatus(!favorited_status);
-      this._setCount(new_count);
+      this._setLikedStatus(!liked_status);
+      this._setCount(liked_status + (liked_status ? -1 : 1));
 
       $.ajax({
-        url: '/protips/' + this._id + '/favorite',
+        url: '/protips/' + this._id + '/like',
         type: 'POST',
         dataType: 'json',
         success: function(data) {
-          this._setFavoritedStatus(data.favorited);
+          // update the UI with server-backed values
+          this._setLikedStatus(data.liked);
           this._setCount(data.count);
+        }.bind(this),
+        error: function(data) {
+          // revert
+          this._setLikedStatus(liked_status);
+          this._setCount(count);
         }.bind(this)
       });
     },
@@ -31,14 +38,14 @@
       $('.count', this._root).html(count);
     },
 
-    _getFavoritedStatus: function() {
-      return this._root.hasClass('favorited');
+    _getLikedStatus: function() {
+      return this._root.hasClass('liked');
     },
 
-    _setFavoritedStatus: function(favorited) {
+    _setLikedStatus: function(liked) {
       this._root.toggleClass(
-        'favorited',
-        favorited
+        'liked',
+        liked
       );
     }
   };
@@ -46,14 +53,14 @@
   $.fn.Protip = function() {
     var root = this;
     var id = parseInt(root.attr('id').match(/protip_(\d+)/)[1], 10);
-    // lazily instantiate a favorite object
-    var favorite;
+    // lazily instantiate a like object
+    var like;
 
     root.click(function(event) {
-      var favorite_root = $(event.target).closest('.favorite');
-      if (favorite_root[0]) {
-        favorite || (favorite = new Favorite(favorite_root, id));
-        favorite.click();
+      var like_root = $(event.target).closest('.like');
+      if (like_root[0]) {
+        like || (like = new Like(like_root, id));
+        like.click();
       }
     });
   }

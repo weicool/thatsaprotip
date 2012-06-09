@@ -2,9 +2,9 @@ class User < ActiveRecord::Base
 
   has_many :protips
 
-  has_many :favorites
-  has_many :favorited_protips,
-    :through => :favorites,
+  has_many :likes
+  has_many :liked_protips,
+    :through => :likes,
     :source => :protip
 
   def self.viewer

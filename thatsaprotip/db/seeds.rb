@@ -32,5 +32,5 @@ protips[1].tags = [tags[2]]
 protips[2].tags = [tags[3]]
 protips[3].tags = [tags[4]]
 
-protips[0].favorited_users = [user_weicool, user_queeny, user_mccord];
-protips[1].favorited_users = [user_weicool];
+protips[0].liked_users = [user_weicool, user_queeny, user_mccord];
+protips[1].liked_users = [user_weicool];

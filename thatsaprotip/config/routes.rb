@@ -57,7 +57,7 @@ Thatsaprotip::Application.routes.draw do
   # match ':controller(/:action(/:id))(.:format)'
   resources :protips do
     member do
-      post 'favorite'
+      post 'like'
     end
   end
 

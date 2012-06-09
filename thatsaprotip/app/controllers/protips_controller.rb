@@ -6,8 +6,8 @@ class ProtipsController < ApplicationController
     @protips = Protip.all
   end
 
-  def favorite
+  def like
     protip = Protip.find(params[:id])
-    render :json => protip.viewer_favorited
+    render :json => protip.viewer_liked
   end
 end

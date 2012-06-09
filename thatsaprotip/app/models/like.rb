@@ -1,4 +1,4 @@
-class Favorite < ActiveRecord::Base
+class Like < ActiveRecord::Base
 
   belongs_to :user
   belongs_to :protip
@@ -8,7 +8,7 @@ class Favorite < ActiveRecord::Base
   private
 
   def increment_count
-    count = ProtipFavoritesTotalCount.find_or_create_by_protip_id(protip.id)
+    count = ProtipLikesTotalCount.find_or_create_by_protip_id(protip.id)
     count.count += 1
     count.save
   end
