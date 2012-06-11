@@ -10,4 +10,7 @@ class ProtipsController < ApplicationController
     protip = Protip.find(params[:id])
     render :json => protip.viewer_liked
   end
+
+  def create
+  end
 end

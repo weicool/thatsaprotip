@@ -81,6 +81,7 @@ a:hover, a:focus {
   background: #75C5F5;
   background-image: -webkit-linear-gradient(#AADBF9, #75C5F5);
   background-image: -moz-linear-gradient(top, #AADBF9, #75C5F5);
+  border-bottom: 1px solid #3BADEC;
 }
 
 #header .title {
@@ -94,27 +95,27 @@ a:hover, a:focus {
   background: #FBFBFB;
   border: 1px solid #EEE;
   border-top: none;
-  padding: 5px;
+  padding: 10px;
 }
 
 /* Home */
 
-.protipsList {
+.protips {
   width: 600px;
 }
 
 /* Protips */
 
-.protipsList {
+.protips {
   list-style: none;
-  margin: 0 20px;
+  margin: 0 15px;
 }
 
-.protipsList .protip {
+.protips .protip {
   border-bottom: 1px solid #EEE;
 }
 
-.protipsList .protip:last-child {
+.protips .protip:last-child {
   border-bottom: none;
 }
 
@@ -176,6 +177,41 @@ a:hover, a:focus {
   margin-right: 5px;
   padding: 0 4px 1px;
   text-shadow: 0 0 1px #888;
+}
+
+/* Publisher */
+
+.protipPublisher {
+  margin: 5px 0 10px 15px;
+  width: 400px;
+}
+
+.protipPublisher .protipTextarea {
+  border: 1px solid #AAA;
+  border-bottom: 1px dashed #CCC;
+  font: 18px Georgia, Arial;
+  padding: 5px;
+  resize: none;
+}
+
+.protipPublisher .protipTags {
+  border: 1px solid #AAA;
+  border-top: 0;
+}
+
+.protipPublisher .protipTextarea,
+.protipPublisher .protipTags {
+  display: block;
+  margin: 0;
+  padding: 5px;
+  width: 100%;
+}
+
+.protipPublisher .submitButton {
+  float: right;
+  font-size: 16px;
+  margin: 8px -12px 0 0;
+  padding: 5px;
 }
 
 /* Sitewide */

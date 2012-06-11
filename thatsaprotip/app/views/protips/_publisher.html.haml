@@ -1,0 +1,10 @@
+= form_for Protip.new, :html => { :class => 'protipPublisher clearfix' } do |f|
+  = f.text_area :protip,
+      :class => 'protipTextarea',
+      :placeholder => 'Write a protip...',
+      :size => '42x4'
+  = f.text_field :tags,
+      :class => 'protipTags',
+      :placeholder => 'Tags'
+  = f.submit 'Post',
+      :class => 'submitButton'

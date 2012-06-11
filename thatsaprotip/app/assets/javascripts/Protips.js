@@ -8,4 +8,4 @@
   }
 })(jQuery);
 
-$($(document).Protips);
+$($('.protips').Protips);
