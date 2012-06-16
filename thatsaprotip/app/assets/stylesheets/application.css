@@ -123,6 +123,10 @@ a:hover, a:focus {
   padding: 15px 0;
 }
 
+.protip .content {
+  margin-right: 20px;
+}
+
 .protip .text {
   font: 18px Georgia, Arial;
 }
@@ -154,6 +158,7 @@ a:hover, a:focus {
 }
 
 .protip .tags {
+  height: 15px;
   margin: 3px 0 6px;
 }
 
@@ -201,6 +206,7 @@ a:hover, a:focus {
 
 .protipPublisher .protipTextarea,
 .protipPublisher .protipTags {
+  border-radius: 0;
   display: block;
   margin: 0;
   padding: 5px;
