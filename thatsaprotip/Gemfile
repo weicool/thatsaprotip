@@ -1,9 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.0'
-
-# Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
+gem 'rails', '4'
 
 gem 'mysql2'
 
@@ -11,20 +8,25 @@ gem 'sqlite3'
 
 gem 'json'
 
-# Deploy with Capistrano
 group :development do
-  gem 'capistrano', '2.11.2'
+  gem 'capistrano', '~> 3.0.0'
+  gem 'capistrano-rails'
+  gem 'capistrano-bundler'
 end
 
-gem 'haml', '3.1.4'
+gem 'haml', '~> 4.0'
 gem 'sass'
+
+gem 'oauth2'
 
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   gem 'execjs'
-  gem 'therubyracer'
+  # using beta for now because Mountain Lion fail
+  gem 'therubyracer', '~> 0.11.0beta5'
+  gem 'libv8', '~> 3.11.8'
 
   gem 'uglifier', '>= 1.0.3'
 end

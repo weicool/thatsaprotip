@@ -27,4 +27,22 @@ class ProtipsController < ApplicationController
     protip.save
     redirect_to '/'
   end
+
+  def fbauth
+    #oauth_endpoint = "https://www.facebook.com/dialog/oauth?client_id=378716345523249&redirect_uri=http://thatsaprotip.com&scope=user_likes,publish_actions&state=foo"
+    #redirect_to oauth_endpoint
+    fb_client.auth_code.authorize_url(
+      :redirect_uri => 'http://localhost:3000/protips/fbauth_callback',
+      :scope => 'publish_stream'
+    )
+  end
+
+  def fbauth_callback
+    token = fb_client.auth_code.get_token(
+      params[:code],
+      :redirect_uri => 'http://localhost:3000/protips/fbauth_callback'
+    )
+    response = token.get('/me')
+    render :text => response
+  end
 end

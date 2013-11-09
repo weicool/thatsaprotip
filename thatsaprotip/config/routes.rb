@@ -61,5 +61,12 @@ Thatsaprotip::Application.routes.draw do
     end
   end
 
+  resources :login do
+    collection do
+      get 'fbauth'
+      get 'fbauth_callback'
+    end
+  end
+
   root :to => 'protips#index'
 end
