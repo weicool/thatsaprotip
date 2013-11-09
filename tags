@@ -1,0 +1,28 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+ActiveSupport	test/test_helper.rb	/^class ActiveSupport::TestCase$/;"	c
+Application	config/application.rb	/^  class Application < Rails::Application$/;"	c	class:Thatsaprotip
+ApplicationController	app/controllers/application_controller.rb	/^class ApplicationController < ActionController::Base$/;"	c
+ApplicationHelper	app/helpers/application_helper.rb	/^module ApplicationHelper$/;"	m
+BrowsingTest	test/performance/browsing_test.rb	/^class BrowsingTest < ActionDispatch::PerformanceTest$/;"	c
+Favorite	app/models/favorite.rb	/^class Favorite < ActiveRecord::Base$/;"	c
+Init	db/migrate/20120514161733_init.rb	/^class Init < ActiveRecord::Migration$/;"	c
+Protip	app/models/protip.rb	/^class Protip < ActiveRecord::Base$/;"	c
+ProtipFavoritesTotalCount	app/models/protip_favorites_total_count.rb	/^class ProtipFavoritesTotalCount < ActiveRecord::Base$/;"	c
+ProtipsController	app/controllers/protips_controller.rb	/^class ProtipsController < ApplicationController$/;"	c
+Tag	app/models/tag.rb	/^class Tag < ActiveRecord::Base$/;"	c
+TagsHelper	app/helpers/tags_helper.rb	/^module TagsHelper$/;"	m
+Thatsaprotip	config/application.rb	/^module Thatsaprotip$/;"	m
+User	app/models/user.rb	/^class User < ActiveRecord::Base$/;"	c
+down	db/migrate/20120514161733_init.rb	/^  def down$/;"	f	class:Init
+favorites_count	app/models/protip.rb	/^  def favorites_count$/;"	f	class:Protip
+index	app/controllers/protips_controller.rb	/^  def index$/;"	f	class:ProtipsController
+render_tag	app/helpers/tags_helper.rb	/^  def render_tag(tag)$/;"	f	class:TagsHelper.render_tags
+render_tags	app/helpers/tags_helper.rb	/^  def render_tags(protip)$/;"	f	class:TagsHelper
+test_homepage	test/performance/browsing_test.rb	/^  def test_homepage$/;"	f	class:BrowsingTest
+up	db/migrate/20120514161733_init.rb	/^  def up$/;"	f	class:Init
+update_count	app/models/favorite.rb	/^  def update_count$/;"	f	class:Favorite
